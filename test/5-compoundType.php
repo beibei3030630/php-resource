@@ -1,4 +1,6 @@
 <?php
+//设置错误级别，所有的错误除了级别。
+error_reporting(E_ALL&~E_NOTICE);
 //复合类型
 //1.数组
 
