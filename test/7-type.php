@@ -112,3 +112,4 @@ if($var){
 }else{
  echo '假的';
 }
+

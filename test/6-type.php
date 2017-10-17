@@ -9,6 +9,8 @@
 
  echo 1+'3king','<br/>';//3king->3
 
+ echo 1+'king'.'<br/>';//king->0 //取不到合法数值为0
+
  echo 1+"2a3b4c",'<br/>';//2a3b4c->2
 
  echo 1+"21a3b4c",'<br/>';//21a3b4c-> 21 只取合法数值 
@@ -44,9 +46,6 @@ $obj=new StdClass();//对象不能直接转换成字符串，会报致命错误�
 echo "<br/>";
 
 echo "aaa"."0";
-
-
-
 
 
 
