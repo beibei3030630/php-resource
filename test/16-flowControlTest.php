@@ -50,3 +50,45 @@
 		$maxNum="请输入合法字符";
 	}
    echo "测试输出最大数字：".$maxNum;
+
+   echo "<hr/>";
+
+   //练习四 根据输入分数  输出分数处于哪个阶段
+   $score=$_POST['score'];
+     if(is_numeric($score)){
+        if($score<60){
+        $stage='分数不及格！';
+       }elseif(60<=$score&&$score<70){
+        $stage='分数一般';
+       }elseif(70<=$score&&$score<90){
+        $stage='分数不错';
+       }elseif(90<=$score&&$score<=100){
+        $stage='分数很好';
+       }else{
+        $stage='请输入100及以下的合法数字';
+       };
+     }else{
+      $stage='请输入合法字符';
+     }
+     
+   echo '测试分数输出阶段：'.$stage;
+ 
+  echo "<hr/>";
+//练习四 根据输入分数  输出分数处于哪个阶段（switch方法实现）
+//如果没有break 语句会一直向下执行 直到执行到break
+   $number=$_POST['number'];
+   switch ($number) {
+     case $number>0&&$number<60:
+      $section='成绩不及格';
+       break;
+     case $number>=60&&$number<70:
+       $section='成绩一般';
+       break;
+     case $number>=70&&$number<=100:
+       $section='成绩不错';
+       break;
+      default:
+        $section='请输入1-100以内的合法数字';
+        break;
+   }
+echo '测试分数输出阶段(switch方法)：'.$section;
