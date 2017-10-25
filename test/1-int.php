@@ -1,4 +1,5 @@
 <?php
+//int和string之间只可以用 , 相连
   $var="正整数:";
   $int=256;
   echo "$var$int";
