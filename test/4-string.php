@@ -145,3 +145,18 @@ echo $table;
 
 
 
+$num=1;
+$price=189;
+$name="凤梨罐头";
+$table=<<<Table
+<table bgcolor="pink" width="20%" border="1" 
+		cellpadding="0" cellspacing="0">
+	<tr>
+		<td>{$name}</td>
+		<td>{$num}</td>
+		<td>{$price}</td>
+	</tr>
+</table>
+Table;
+echo $table;
+

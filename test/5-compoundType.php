@@ -1,5 +1,5 @@
 <?php
-//设置错误级别，所有的错误除了级别。
+//设置错误级别，显示所有的错误除了注意。
 error_reporting(E_ALL&~E_NOTICE);
 //复合类型
 //1.数组
@@ -40,7 +40,7 @@ echo "<hr/>";
 //经过unset（）注销过的变量，值为null
 $var=123;
 unset($var);
-var_dump($var);
+var_dump($var);//打印结果为null
 
 echo '<hr/>';
 
