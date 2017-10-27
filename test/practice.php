@@ -46,3 +46,28 @@ echo "<hr/>";
 echo intval($str);
 echo "<hr/>";
 echo (bool)$str;
+
+echo "<hr/>";
+$tel=123;
+settype($tel, "real");
+var_dump($tel);
+echo "<hr/>";
+
+$email='1000@imooc.com';
+settype($email, "int");
+var_dump($email);
+settype($email, "bool");
+var_dump($email);
+settype($email,"float");
+var_dump($email);
+
+echo "<hr/>";
+
+echo TEST;
+var_dump(TEST);
+
+
+define("TEST1","this is a test");
+var_dump(defined("TEST1"));//boolean false
+
+print_r(get_defined_constants());
