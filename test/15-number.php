@@ -107,9 +107,7 @@ echo "<hr/>";
 //字符串只支持递增，不支持递减
 
 $str='a';
-
 $str++;
-
 echo $str.'<br/>';//b
 
 $str='b';
@@ -127,7 +125,7 @@ echo $str."<br/>";//abd 递增最后一位
 
 $str='a9';
 $str++;
-echo $str."<br/>";//9+1=10 a进一位  b0
+echo $str."<br/>";//9+1=10 十进制 a进一位  b0
 
 echo '<hr/>';
 
@@ -135,7 +133,6 @@ echo '<hr/>';
 //ord($var)得到指定字符的ASCII码值
 
 $str='a';
-
 echo ord($str).'<br/>';//a的acsii码值为97
 
 //chr($ascii)根据指定字符得到相对应的元素
@@ -157,7 +154,7 @@ echo '<br/>';
 
 $str1='hello';
 $str2='world';
-// $newStr=$str1,$str2;//赋值给一个新的字符串。两个字符串中间不能用逗号。逗号只能在echo中用于连接
+// $newStr=$str1,$str2;//赋值给一个新的变量。两个变量中间不能用逗号。逗号只能在echo中用于连接
 
 
 $newStr=$str1.$str2;
@@ -188,7 +185,7 @@ $str.= ' world';//.=用来连接字符串
 echo $str.'<br/>';
 
 
-$str3.='hello';//未定义过$str2;$str2为null 转换为空字符串。
+$str3.='hello';//未定义过$str3;$str3为null 转换为空字符串。
 echo $str3.'<br/>';
 
 
@@ -292,15 +289,16 @@ var_dump(
 
 //$a??$b??$c  NULL 合并操作符
 //PHP7开始提供。
-//返回从左往右第一个存在且不为 NULL 的操作数。如果都没有定义且不为 NULL，则返回 NULL。
+//返回从左往右第一个存在且不为 NULL 的操作数。如果都没有定义且不为 NULL，则返回 null
 
  $var='beibei';
 var_dump(
 	$abc??$def??$var, //'beibei'.未定义的变量当成null
 	null??$var??null,//跳过第一个null，拿到第二位的操作数
-	true??$var??'123',//true
-	0??false??null??'$var'//int  0
-	//0 和false 不会转换为null
+	true??$var??'123',//true,直接拿到第一个操作数
+	$aa??$bb??$cc,//如果全未定义，则直接返回null
+	0??false??null??'$var'//拿到第一个操作数，int 0
+						  //0 和false 不会转换为null
 	);
 echo "<hr/>";
 //1-11选择题
@@ -391,7 +389,7 @@ echo $username=='king'?"true":"false";
 echo "<br/>";
 
 //特殊情况
- $res=1?:'abc';//如果缺少第二个表达式 结果又为真 那返回的就是第一个表达式  
+ $res=1?:'abc';//如果缺少第二个表达式 结果又为真。 那返回的就是第一个表达式。结果返回1
  
 echo $res.'<br/>';
 
@@ -408,9 +406,12 @@ if($p=$i--||$j++){//=等于号的优先级很低 所以先运行递增递减在�
 	echo "false";
 }
 
-var_dump($i,$j,$p);//$i int 0 为true。$j短路，$j不执行后置递增。 
-//$j int 0 
-// $p->true
+echo $i."<br/>";//$i int 0 为true。
+echo $j."<br/>";//$j int 0 $j短路，$j不执行后置递增。
+echo $p."<br/>";// $p->1 
+ 
+
+
 
 echo "<hr/>";
 
@@ -431,6 +432,9 @@ echo "{$i}+{$j}=".($i+$j);//添加（）。让+先运算
 //等到结果3+8=11
 
 echo "<hr/>";
+
+
+
 //优先级运算 1-15例子
 $i=5;
 $j=3;

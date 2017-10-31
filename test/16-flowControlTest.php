@@ -92,3 +92,4 @@
         break;
    }
 echo '测试分数输出阶段(switch方法)：'.$section;
+
