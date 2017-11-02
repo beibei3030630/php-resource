@@ -100,3 +100,14 @@ $arr2=array(
 print_r($arr2);
 $arr2[]=["d","e",7];
 print_r($arr2);
+
+$arr=array(
+	"name"=>array("id"=>167,"info"=>"abc"),
+	"email"=>array("common"=>"123456789@qq.com")
+);
+print_r($arr);
+$arr=array(
+	"name"=>array("a","b","c"),
+	"id"=>array(33,22,11)
+	);
+print_r($arr);

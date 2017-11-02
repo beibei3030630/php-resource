@@ -80,7 +80,7 @@ echo "<table border='1' cellspacing='0' cellpadding='0'>";
 for($i=1;$i<=9;$i++){
 	echo "<tr>";
 	for($j=1;$j<=$i;$j++){
-		echo "<td>{$j}X{$i}=".($i*$j)."</td>";
+		echo "<td>{$j}*{$i}=".($i*$j)."</td>";
 	}
 	echo "</tr>";
 }
@@ -137,7 +137,7 @@ for($i=100000,$num=0;$i>5000;){
   if($i>=50000){
   	$i*=0.95;
   }else{
-  	$i-=2500;
+  	$i-=5000;
   }
   $num++;
 }
