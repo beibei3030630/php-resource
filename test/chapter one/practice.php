@@ -331,4 +331,12 @@ for ($i=0; $i <4 ; $i++) {
 	echo "<span style='color:rgb(".mt_rand(0,255).",".mt_rand(0,255).",".mt_rand(0,255).")'>".mt_rand(0,9)."</span>";
 }
 
+$arr=[3,4,5];
+print_r($arr);
 
+$arr=array(
+	array("1","6",5),
+	array("1","6",5),
+	array("1","6",5)
+	);
+print_r($arr);

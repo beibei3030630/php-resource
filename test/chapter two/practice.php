@@ -1,0 +1,13 @@
+<?php
+$arr=[0,1,2];
+print_r($arr);
+$arr=[
+	[3.4=>5.6]
+];
+print_r($arr);
+$arr=array(
+	array("id"=>"123"),
+	array("id"=>"456"),
+	array("id"=>"789")
+	);
+print_r($arr);

@@ -67,10 +67,9 @@ $arr=array(
 print_r($arr);
 
 $arr=array(
-	-15=>6,
-	-20=>7,
-	-37=>8,
-	9
+	15=>6,
+	20=>7,
+	37=>8
 );
 print_r($arr);
 $arr=[
@@ -110,4 +109,27 @@ $arr=array(
 	"name"=>array("a","b","c"),
 	"id"=>array(33,22,11)
 	);
+print_r($arr);
+
+//$arr=[];索引+索引
+$arr=[
+	["1","2","6"]
+];
+print_r($arr);
+
+$arr=[
+	"name"=>[1,2,5],
+	"id"=>[7,8,9]
+];
+print_r($arr);
+$arr=[
+	["abc"=>123],
+	["abc"=>456],
+	["abc"=>789],
+];
+print_r($arr);
+$arr=[
+	"id"=>["one"=>123,"two"=>456],
+	"email"=>["three"=>789,"four"=>123],
+];
 print_r($arr);
