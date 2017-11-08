@@ -34,6 +34,6 @@ $arr=[
 	"username"=>"king",
 	33=>"ddd"
 ];
-while (list($k,$v)=each($arr)) {
+while (list($k,$v)=each($arr)) {//$k,$v会对应数组中下标为[0]和[1]的值
 	echo $k."--".$v."<br/>";
-}
+}	
