@@ -37,15 +37,63 @@ $str3=join("",range("A","Z"));
 $arr1=range(0,9);
 $arr2=range("a","z");
 $arr3=range("A","Z");
+//拼接数组
 $newArr=array_merge($arr1,$arr2,$arr3);
+//mehod1使用mt_rand加循环遍历4为验证码
 $str='';
 for($i=1;$i<=4;$i++){
   $str.=$newArr[mt_rand(0,count($newArr)-1)];
 }
 echo $str;
 echo "<hr/>";
+//method2 使用array_rand随机获取键名，通过array_flip互换键值和键名的位置。得到随机验证码。
+//获取验证码
+$arr1=range(0,9);
+$arr2=range("a","z");
+$arr3=range("A","Z");
+//拼接数组
+$newArr=array_merge($arr1,$arr2,$arr3);
 $resArr=array_rand(array_flip($newArr),4);
 $string=join("",$resArr);
 echo $string;
 
+//打乱数组
+$newArr=[1,2,3,4,5];
+shuffle($newArr);
+print_r($newArr);
 
+
+//模拟用户数据插入数据库
+//INSERT user(username,password,email) VALUES('aaa','bbb','ccc');
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+</head>
+<body>
+	<form action="#" method="post">
+		<input type="text" name="username"/>
+		<br/>
+		<input type="text" name="password"/>
+		<br/>
+		<input type="text" name="email"/>
+		<br/>
+		<input type="submit" value="提交"/>
+	</form>
+</body>
+</html>
+
+<?php
+	 $username=$_POST['username'];
+	 $password=$_POST['password'];
+	 $email=$_POST['email'];
+	 $arr=compact('username','password','email');
+	 //INSERT user(username,password,email) VALUES('aaa','bbb','ccc');
+	 $arrKeys=join(",",array_keys($arr));
+	 $arrValues="'".join("','",array_values($arr))."'";
+	 $res="INSERT user($arrKeys) VALUES($arrValues)";
+	 echo $res;
+	?>
