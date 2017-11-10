@@ -1,115 +1,79 @@
 <?php
-	header('content-type:text/html;charset=utf-8');
-	date_default_timezone_set('PRC');
-	$filename="msg.txt";
-	$msg=[];
-	if(file_exists($filename)){
-		$string=file_get_contents($filename);
-		if(strlen($string)>0){
-   			 $msg=unserialize($string);
-       }
-	}
-	if(isset($_POST['pubMsg'])){
-		$username=$_POST['username'];
-		$title=$_POST['title'];
-		$content=$_POST['content'];
-		$time=time();
-		$data=compact('username','title','content',"time");
-		if(is_array($msg)){
-			array_push($msg,$data);
-		}else{
-			echo "报错";	
-		}
-		
-		$msgData=serialize($msg);
-		file_put_contents($filename, $msgData);
-	}
-	print_r($msg);	
-
+date_default_timezone_set("PRC");
+  $filename="msg.txt";
+  //初始化数组
+  $msgs=[];
+  //检测文件是否存在
+  if(file_exists($filename)){
+  	//读取文件中的内容
+  	$string=file_get_contents($filename);
+  	if(strlen($string)>0){
+  		$msgs=unserialize($string);
+  	}
+  }
+  //检测用户是否点击了提交按钮
+  if(isset($_POST['pubMsg'])){
+  	$username=$_POST['username'];
+  	$title=$_POST['title'];
+  	//获得当前文件的时间戳
+  	$time=time();
+  	$content=$_POST['content'];
+  	//将其组成关联数组
+  	$data=compact('username','title','time','content');
+  	array_push($msgs, $data);
+  	//序列化之后$msgs为字符串
+  	$msgs=serialize($msgs);
+  	//每次提交之后，页面刷新。$msgs又为数组，返回之前设定好的表格
+  	if(file_put_contents($filename, $msgs)){
+  		echo "<script>alert('发布留言成功');location.href='14-messageBoard.php';</script>";
+  	}else{
+  		echo "<script>alert('发布留言失败，请稍后重试');location.href='14-messageBoard.php';</script>";
+  	}
+  }
+  // print_r($msgs);
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<html>
 <head>
-<script type="text/javascript" src="http://www.francescomalagrino.com/BootstrapPageGenerator/3/js/jquery-2.0.0.min.js"></script>
-<script type="text/javascript" src="http://www.francescomalagrino.com/BootstrapPageGenerator/3/js/jquery-ui"></script>
-<link href="http://www.francescomalagrino.com/BootstrapPageGenerator/3/css/bootstrap-combined.min.css" rel="stylesheet" media="screen">
-<script type="text/javascript" src="http://www.francescomalagrino.com/BootstrapPageGenerator/3/js/bootstrap.min.js"></script>
+	<meta charset="UTF-8">
+	<title>messageBoardTest</title>
 </head>
 <body>
-<div class="container-fluid">
-	<div class="row-fluid">
-		<div class="span12">
-			<h1>
-				留言板<br />
-			</h1>
-			<div class="hero-unit">
-				<h3>
-					Hello, world!
-				</h3>
-				<p>
-					这是一个可视化布局模板, 你可以点击模板里的文字进行修改, 也可以通过点击弹出的编辑框进行富文本修改. 拖动区块能实现排序.
-				</p>
-				<p>
-					<a rel="nofollow" class="btn btn-primary btn-large" href="#">参看更多 »</a>
-				</p>
-			</div>
-			<?php if(is_array($msg)&&count($msg)>0):?>
-			<table class="table">
-				<thead>
-					<tr>
-						<th>
-							编号
-						</th>
-						<th>
-							用户名
-						</th>
-						<th>
-							标题
-						</th>
-						<th>
-							内容
-						</th>
-						 <th>
-							时间
-						</th>						
-					</tr>
-				</thead>
-				<tbody>
-				   <?php $i=1;foreach($msg as $val):?>
-					<tr>
-						<td>
-							<?php echo $i++;?>
-						</td>
-						<td>
-							<?php echo $val['username'];?>
-						</td>
-						<td>
-							<?php echo $val['title'];?>
-						</td>
-						<td>
-							<?php echo $val["content"];?>
-						</td>
-						<td>
-							<?php echo date("m/d/Y H:i:s",$val['time']); ?>
-						</td>
-					</tr>
-				  <?php endforeach;?>	
-				</tbody>
-			</table>
-		<?php endif;?>
-			<form action="#" method="post">
-				<fieldset>
-					 <legend>请留言</legend>	
-           <label>用户名</label><input type="text" name="username" required />
-           <label>标题</label><input type="text" name="title" required />
-           <label>内容</label><textarea name="content" rows="5" cols="30" required></textarea>
-           <hr>
-           <input type="submit" class="btn btn-primary btn-lg" name="pubMsg" value="发布留言"/>
-				</fieldset>
-			</form>
-		</div>
-	</div>
-</div>
+	<h1>留言板</h1>
+	<?php if(is_array($msgs)&&count($msgs)>0):?>
+		<table border="1" cellspacing="0" cellpadding="0" width="90%">
+		      <tr>
+		      <td>编号</td>		
+		      <td>用户名</td>		
+		      <td>标题</td>		
+		      <td>时间</td>		
+		      <td>内容</td>		
+		      </tr>
+		    <?php $i=1; foreach ($msgs as $val):?>
+			 <tr>
+		      <td><?php echo $i++?></td>		
+		      <td><?php echo $val['username']?></td>		
+		      <td><?php echo $val['title']?></td>
+		      <!--如果不设置时间戳，所有时间都为最后一次提交的时间-->		
+		      <td><?php echo date("Y/m/d H:i:s",$val['time'])?></td>		
+		      <td><?php echo $val['content']?></td>		
+		      </tr> 
+		     <?php endforeach;?>     
+		</table>
+	<?php endif;?>
+	<h3>请留言</h3>
+	<form action="#" method="post">
+		<label for="用户名">用户名</label><input type="text" name="username" required>
+		<br/>
+		<br/>
+		<label for="标题">标题</label><input type="text" name="title" style="margin-left:16px" required>
+		<br/>
+		<br/>
+		<label >请输入内容</label>
+		<br/>
+		<textarea name="content" id="" cols="30" rows="10" required></textarea>
+		<br/><br/>
+		<input type="submit" value="提交" name="pubMsg">
+	</form>
 </body>
 </html>

@@ -22,10 +22,11 @@ if(isset($_POST['pubMsg'])){
   array_push($msgs,$data);
   $msgs=serialize($msgs);
   if(file_put_contents($filename,$msgs)){
-    echo "<script>alert('留言成功！');location.href='22-msg.php';</script>";
+  	echo "<script>alert('留言成功');location.href='msgTemplate.php';</script>";
   }else{
-    echo "<script>alert('留言失败！');location.href='22-msg.php';</script>";
+  	echo "<script>alert('留言失败');location.href='msgTemplate.php';</script>";
   }
+   
 }
 /*
 $msgs=[
@@ -37,7 +38,7 @@ file_put_contents($filename,$data):向指定文件写内容，如果文件不存
 serialize($str):序列号字符串
 unserialize($str):反序列号
 */
-print_r($msgs);
+//print_r($msgs);
 ?>
 <!DOCTYPE html>
 <html lang="en">
