@@ -72,3 +72,65 @@ function testc(){
 	return ++$a."<br/>".++$b;
 }
 echo testc();
+
+var_dump(function_exists('testc'));
+
+if(!function_exists("test3")){
+	function test3(){
+		echo "this is test3";
+	}
+}else{
+	echo "函数名重复";
+}
+test3();
+echo "<br/>";
+
+invokeTest();
+function invokeTest(){
+	echo "this is a invoketest<br/>";
+}
+invokeTest();
+
+invokeTest2();
+
+	function invokeTest2(){
+		echo "this is a invoketest<br/>";
+	}
+
+invokeTest2();
+
+function test4(){
+	function test5(){
+		echo "this is test<br/>";
+	}
+}
+test4();
+test5();
+
+//return
+function  testReturn(){
+	$a=123456;
+	echo $a;
+}
+var_dump(testReturn());
+
+//打印返回值为数组的函数
+function returnArray(){
+	return array(1,2,3);
+}
+var_dump(returnArray());
+
+function returnObj(){
+	return new stdClass();
+}
+var_dump(returnObj());
+
+function returnFile(){
+	return fopen("../chapterOneSyntax/test.php","r");
+}
+var_dump(returnFile());
+
+function returnMd5(){
+	return md5("beibei3030630");
+}
+var_dump(returnMd5());
