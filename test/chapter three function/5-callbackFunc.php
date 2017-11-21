@@ -50,7 +50,19 @@ $arr2=[3,6,9,12];
 function division(&$j){
 	 return $j/=3;
 
+
 }
 print_r($arr2);
 var_dump(array_walk($arr2, 'division'));
 print_r($arr2);
+
+//array_filter
+//筛选出奇数
+$arr=[1,2,3,4,5,6,7,8,9];
+function filter($i){
+   if($i%2==1){
+ 	 return $i;  	
+   }
+}
+print_r(array_filter($arr,'filter'));
+
