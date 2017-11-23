@@ -42,19 +42,19 @@ function multip($k){
 print_r($arr);//[0] => 1  [1] => 2 [2] => 3  [3] => 4
 print_r(array_map('multip',$arr)); 
 //[0] => 3  [1] => 6 [2] => 9  [3] => 12
-print_r($arr);//array_map取得是值引用，结果还是1,2,3,4
+print_r($arr);//array_map修改的是数组的副本，结果还是1,2,3,4
 
 
 //array_walk
-$arr2=[3,6,9,12];
-function division(&$j){
-	 return $j/=3;
+// $arr2=[3,6,9,12];
+// function division(&$j){
+// 	 return $j/=3;
 
 
-}
-print_r($arr2);
-var_dump(array_walk($arr2, 'division'));
-print_r($arr2);
+// }
+// print_r($arr2);
+// var_dump(array_walk($arr2, 'division'));
+// print_r($arr2);
 
 //array_filter
 //筛选出奇数
@@ -65,4 +65,41 @@ function filter($i){
    }
 }
 print_r(array_filter($arr,'filter'));
+//1 3 5 7 9
 
+echo "<hr/>";
+
+function a1(){
+	echo  "this is a1";
+}
+function  a2(){
+	echo "this is a2";
+}
+function num($func){
+	return $func();
+}
+num('a1');
+
+echo "<hr/>";
+//测试array_walk
+$arrayTest=[5,10,15];
+function func(&$i){
+	return $i/=3;
+}
+print_r($arrayTest);
+var_dump(array_walk($arrayTest, 'func'));
+print_r($arrayTest);
+
+
+
+$arr2=[3,6,9,12];
+function division(&$j){
+	 return $j/3;
+}
+print_r($arr2);//Array ( [0] => 3 [1] => 6 [2] => 9 [3] => 12 )
+var_dump(array_walk($arr2, 'division'));//true
+print_r($arr2);//Array ( [0] => 3 [1] => 6 [2] => 9 [3] => 12 )
+
+	
+
+echo call_user_func('md5','beiebi3030630');

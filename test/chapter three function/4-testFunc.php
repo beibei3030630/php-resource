@@ -29,3 +29,24 @@ function getFuncname($funcname){
 	}
 }
 echo getFuncname("test1");
+echo "<>";
+
+//嵌套函数
+function wrapperFunction(){
+	function nestFunction(){
+		return "this is nestFunction{$a}";
+	}
+		$a=666;
+		return  "this is wrapperFunction{$a}";
+}
+echo wrapperFunction();
+echo nestFunction();
+
+//嵌套的调用
+function bar(){
+	echo "hello world";
+}
+function foo(){
+	bar();
+}
+foo();
