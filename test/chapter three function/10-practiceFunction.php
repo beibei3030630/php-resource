@@ -1,5 +1,6 @@
 <?php
-//封装截图文件扩展名
+date_default_timezone_set("PRC");
+//封装截图文件扩展名(十种方法)
 $filename="1.php.html";
 function getExt($filename){
 	//method 1
@@ -8,7 +9,8 @@ function getExt($filename){
 	// method2
 	//return  strtolower(pathinfo($filename,PATHINFO_EXTENSION));
 	//method3
-	
+	$array=explode('.', $filename);
+	return end($array);
 }
 echo getExt($filename);
 
@@ -42,3 +44,25 @@ function calculator($num1,$num2,$opi='+'){
 	}
 
 echo calculator("6","6","*");
+
+
+//输出日期 年月日 小时分钟秒钟  星期几 可自定义分割符 
+function func($opr){
+	$weekArr=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+	$week=$weekArr[date(w)];
+	$date=date("Y{$opr}m{$opr}d H:i:s {$week}");
+	return $date;
+}
+echo func("**");
+
+echo "<br/>";
+
+//封装验证码
+function code(){
+	$span="";
+	for ($i=1; $i <=4 ; $i++) { 
+			$span.=mt_rand(0,9);
+		}	
+	return $span;
+}
+echo code();
