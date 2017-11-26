@@ -1,16 +1,23 @@
 <?php
 //通过字符串函数库完成表单常用字段验证
-function verfiy(){
+	// $arr1=range(0,9);
+	// $arr2=range('a','z');
+	// $arr3=range('A','Z');
+	// $newArr=array_merge($arr1,$arr2,$arr3);
+	// $str='';
+	// for ($i=1;$i<=4;$i++){
+	//    $str.=$newArr[mt_rand(0,count($newArr)-1)];
+	// }
+	// return $str;
+
 	$arr1=range(0,9);
 	$arr2=range('a','z');
 	$arr3=range('A','Z');
-	$newArr=array_merge($arr1,$arr2,$arr3);
+	$newArr=array_merge($arr3,$arr2,$arr1);
 	$str='';
-	for ($i=1;$i<=4;$i++){
-	   $str.=$newArr[mt_rand(0,count($newArr)-1)];
+	for($i=1;$i<=4;$i++){
+		$str.="<span style='color:rgb(".mt_rand(0,255).",".mt_rand(0,255).",".mt_rand(0,255).")'>".$newArr[mt_rand(0,count($newArr)-1)]."</span>";
 	}
-	return $str;
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,15 +35,15 @@ function verfiy(){
 			</tr>
 			<tr>
 				<td align='right'>密码</td>
-				<td><input type="text" name="password" placeholder="请输入密码">密码长度6-10</td>
+				<td><input type="password" name="password" placeholder="请输入密码">密码不能为空，长度6-10</td>
 			</tr>
 			<tr>
 				<td align='right'>确认密码</td>
-				<td><input type="text" name="password1" placeholder="请确认密码">两次密码一致</td>
+				<td><input type="password" name="password1" placeholder="请确认密码">两次密码一致</td>
 			</tr>
 			<tr>
 				<td align='right'>邮箱</td>
-				<td><input type="text" name="password1" placeholder="请确认合法邮箱">邮箱必须包含@,1686310541@qq.com</td>
+				<td><input type="text" name="email" placeholder="请确认合法邮箱">邮箱必须包含@,1686310541@qq.com</td>
 			</tr>
 			<tr>
 				<td align="right">兴趣爱好</td>
@@ -54,7 +61,14 @@ function verfiy(){
 			</tr>
 			<tr>
 				<td align="right">验证码</td>
-				<td><input type="text" name="verify"><?php echo verfiy()?></td>
+				<td>
+					<!-- 用户填写的验证码 -->
+					<input type="text" name="verify">
+					<!-- 给用户看的真实的随机验证码 -->
+					<?php echo $str?>
+					<!-- 把真实的验证码传递到后端，通过隐藏表格，把真实的验证码的值赋值给value -->
+					<input type="hidden" name="verify1" value="<?php echo $str?>"/>
+				</td>
 			</tr>
 			<tr>
 				<td colspan="2"><input type="submit" value='立即注册'></td>
