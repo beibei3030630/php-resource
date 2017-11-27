@@ -27,3 +27,9 @@ var_dump(strrpos($foo,'7'));
 if(strpos($foo,'0')===false){
 	echo "不存在数字0";
 }
+
+$str=trim(" ABC ");
+echo "X".$str."X";//XABCX
+
+$password="baobao9056";
+echo md5($password);
