@@ -1,7 +1,7 @@
 <?php
 header('content-type:text/html;charset=utf-8');
 $fileInfo=$_FILES['myFile'];
-
+print_r($fileInfo);
 $allowExt=['jpg','jpeg','png','gif'];
 $maxSize=2097152;//默认2M
 

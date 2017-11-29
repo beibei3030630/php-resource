@@ -5,7 +5,7 @@
 	<title>chapter upload</title>
 </head>
 <body>
-	<form action="doAction1.php" method="post" enctype="multipart/form-data">
+	<form action="doAction2.php" method="post" enctype="multipart/form-data">
 		请选择要上传的文件:
 		<!-- 通过表单隐藏域限制上传文件的最大值 -->
 		<!-- <input type="hidden" name='MAX_FILE_SIZE' value='2097152'/> -->
