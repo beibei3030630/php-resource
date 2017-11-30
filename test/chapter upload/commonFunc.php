@@ -9,13 +9,17 @@ function getFile($fileInfo,$maxSize=2097152,$allowExt=['jpg','jpeg','png','gif']
 		}
 		// $allowExt=['jpg','jpeg','png','gif'];
 		$ext=strtolower(pathinfo($fileInfo['name'],PATHINFO_EXTENSION));
+		// 可传入类型是可选参数，检测下是否为数组
+		if(!is_array($allowExt)){
+			exit("系统错误");
+		}
 		if(!in_array($ext, $allowExt)){
 			exit('非法类型');
 		}
 		// $flag=true;
 		if($flag){
 			if(!getimagesize($fileInfo['tmp_name'])){
-				echo "不是真实图片";
+				exit("不是真实图片");
 			}
 		}
 		// $path='upload/';

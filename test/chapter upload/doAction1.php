@@ -1,13 +1,11 @@
 <?php
 header('content-type:text/html;charset=utf-8');
 $fileInfo=$_FILES['myFile'];
-print_r($fileInfo);
+// print_r($fileInfo);
 $allowExt=['jpg','jpeg','png','gif'];
 $maxSize=2097152;//默认2M
 
 if($fileInfo['error']==0){
-	
-
 	if ($fileInfo['size']>$maxSize){
 		exit('超过最大上传限制');
 	}
