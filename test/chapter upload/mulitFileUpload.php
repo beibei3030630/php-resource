@@ -7,13 +7,13 @@
 <body>
 	<form action="doAction3.php" method="post" enctype="multipart/form-data">
 		请选择要上传的文件:
-		<input type="file" name="myFile1"	/><br/>
+		<input type="file" name="myFile[]"	/><br/>
 		请选择要上传的文件:
-		<input type="file" name="myFile2"/><br/>
+		<input type="file" name="myFile[]"/><br/>
 		请选择要上传的文件:
-		<input type="file" name="myFile3"/><br/>
+		<input type="file" name="myFile[]"/><br/>
 		请选择要上传的文件:
-		<input type="file" name="myFile4"/><br/>
+		<input type="file" name="myFile[]"/><br/>
 		<input type="submit" value='上传文件'/>
 	</form>
 </body>

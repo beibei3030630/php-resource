@@ -22,26 +22,35 @@ include_once('commonFunc.php');
 //             [size] => 76248
 //         )
 
-//     [myFile3] => Array
-//         (
-//             [name] => telicon.jpg
-//             [type] => image/jpeg
-//             [tmp_name] => D:\wamp\wamp\tmp\php588C.tmp
-//             [error] => 0
-//             [size] => 1074
-//         )
-
-//     [myFile4] => Array
-//         (
-//             [name] => telicon.jpg
-//             [type] => image/jpeg
-//             [tmp_name] => D:\wamp\wamp\tmp\php589C.tmp
-//             [error] => 0
-//             [size] => 1074
-//         )
-
-// )
-foreach($_FILES as $fileInfo){
-	$files[]=getFile($fileInfo);
+// function getFiles(){
+// 	$i=0;
+// 	$files=[];
+// 	foreach($_FILES as $file) { 
+// 		if(is_string($file['name'])){
+// 			$files[$i]=$file;
+// 			$i++;
+// 		}elseif(is_array($file['name'])){
+// 			foreach ($file['name'] as $key => $value) {
+// 				$files[$i]['name']=$file['name'][$key];
+// 				$files[$i]['tmp_name']=$file['tmp_name'][$key];
+// 				$files[$i]['size']=$file['size'][$key];
+// 				$files[$i]['error']=$file['error'][$key];
+// 				$files[$i]['type']=$file['type'][$key];
+// 				$i++;
+// 				}
+// 			}
+// 	}
+// 	return $files;
+// }
+// print_r(getFiles());
+function getFiles(){
+	$i=0;
+	foreach ($_FILES as $file ) {
+		foreach ($file as $key =>$val) {
+			$files[$i]['name'] =$file['name'][$key];
+			$i++;
+		}
+	}
+	$files[i];
 }
-print_r($files);
+print_r(getFiles());
