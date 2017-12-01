@@ -45,12 +45,12 @@ include_once('commonFunc.php');
 // print_r(getFiles());
 function getFiles(){
 	$i=0;
-	foreach ($_FILES as $file ) {
-		foreach ($file as $key =>$val) {
-			$files[$i]['name'] =$file['name'][$key];
+	foreach($_FILES as $val) {	
+		foreach ($val as $v){
+			$files[$i]=$v;
 			$i++;
 		}
 	}
-	$files[i];
+	return $files;
 }
 print_r(getFiles());

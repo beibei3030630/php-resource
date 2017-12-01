@@ -24,3 +24,21 @@ elseif($str>=80&&$str<=100):
 else:
 	echo "分数错误";
 endif;
+echo "<hr/>";
+$arr=[
+	"abc"=>['a'=>[1,2,3],'b'=>[4,5,6],'c'=>[7,8,9]],
+	"def"=>['d'=>[10,11,12],'e'=>[13,14,15],'f'=>[16,17,18]]
+];
+$i=0;
+foreach ($arr as $value) {
+	foreach ($value as $key => $v) {
+		$files[$i]=$v[0];
+		// $files[$i]=$v['b'][$key];
+		// $files[$i]=$v['c'][$key];
+		// $files[$i]=$v['d'][$key];
+		// $files[$i]=$v['e'][$key];
+		// $files[$i]=$v['f'][$key];
+		$i++;
+	}
+}
+print_r($files);
