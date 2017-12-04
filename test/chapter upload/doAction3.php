@@ -22,34 +22,23 @@ include_once('commonFunc.php');
 //             [size] => 76248
 //         )
 
-// function getFiles(){
-// 	$i=0;
-// 	$files=[];
-// 	foreach($_FILES as $file) { 
-// 		if(is_string($file['name'])){
-// 			$files[$i]=$file;
-// 			$i++;
-// 		}elseif(is_array($file['name'])){
-// 			foreach ($file['name'] as $key => $value) {
-// 				$files[$i]['name']=$file['name'][$key];
-// 				$files[$i]['tmp_name']=$file['tmp_name'][$key];
-// 				$files[$i]['size']=$file['size'][$key];
-// 				$files[$i]['error']=$file['error'][$key];
-// 				$files[$i]['type']=$file['type'][$key];
-// 				$i++;
-// 				}
-// 			}
-// 	}
-// 	return $files;
-// }
-// print_r(getFiles());
 function getFiles(){
 	$i=0;
-	foreach($_FILES as $val) {	
-		foreach ($val as $v){
-			$files[$i]=$v;
+	$files=[];
+	foreach($_FILES as $file) { 
+		if(is_string($file['name'])){
+			$files[$i]=$file;
 			$i++;
-		}
+		}elseif(is_array($file['name'])){
+			foreach ($file['name'] as $key => $value) {
+				$files[$i]['name']=$file['name'][$key];
+				$files[$i]['tmp_name']=$file['tmp_name'][$key];
+				$files[$i]['size']=$file['size'][$key];
+				$files[$i]['error']=$file['error'][$key];
+				$files[$i]['type']=$file['type'][$key];
+				$i++;
+				}
+			}
 	}
 	return $files;
 }
