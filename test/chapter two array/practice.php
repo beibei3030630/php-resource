@@ -45,3 +45,22 @@ foreach ($arr as $value) {
 	
 }
 print_r($files);
+
+// $array[]=[
+// 	"id"=>123,
+// 	"name"=>'beibei',
+// 	"age"=>'22'
+// ];
+// $array[]=[
+// 	"id"=>456,
+// 	"name"=>"angle",
+// 	"age"=>25
+// ];
+$array[0]["id"]=123;
+$array[0]["name"]="beibei3030630";
+$array[0]["age"]=22;
+$array[1]["id"]=456;
+$array[1]["name"]="angle";
+$array[1]["age"]=25;
+
+print_r($array);

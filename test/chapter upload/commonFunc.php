@@ -61,3 +61,13 @@ function getFile($fileInfo,$maxSize=2097152,$allowExt=['jpg','jpeg','png','gif']
 	}
 	return $res;
 }
+// 得到文件的扩展名
+function getExt($fileName){
+	$fileExt=pathinfo($fileName,PATHINFO_EXTENSION);
+	return $fileExt;
+}
+//得到唯一的文件名
+function getUniqueName(){
+	return md5(uniqid(microtime(true),true));
+	
+}
