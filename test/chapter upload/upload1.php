@@ -11,6 +11,7 @@
 		<!-- <input type="hidden" name='MAX_FILE_SIZE' value='2097152'/> -->
 		<!-- 通过accept属性限制上传文件的类型 -->
 		<input type="file" name="myFile"/><br/>
+		<!-- <input type="file" name="myFile2"/><br/> -->
 		<!-- type='file' 定义输入字段和 "浏览"按钮，供文件上传。-->
 		<input type="submit" value='上传文件'/>
 		<!-- type='submit' 定义提交按钮。提交按钮会把表单数据发送到服务器。 -->

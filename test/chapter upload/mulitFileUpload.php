@@ -11,9 +11,7 @@
 		请选择要上传的文件:
 		<input type="file" name="myFile[]"/><br/>
 		请选择要上传的文件:
-		<input type="file" name="myFile[]"/><br/>
-		请选择要上传的文件:
-		<input type="file" name="myFile[]"/><br/>
+		<input type="file" name="myFile[]" multiple="multiple" /><br/>
 		<input type="submit" value='上传文件'/>
 	</form>
 </body>

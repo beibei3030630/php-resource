@@ -70,7 +70,7 @@ include_once('commonFunc.php');
 
 // )
 
-//得到单个单文件信息已经多个单文件信息
+//得到单个单文件信息、多个单文件信息以及多文件信息
 function getFiles(){
 	$files=[];
 	$i=0;
@@ -96,25 +96,29 @@ function getFiles(){
 	return $files;
 }
 
-function getFilesInfo($fileInfo,$allowExt=['jpg','jpeg','png','gif'],$flag=true,$path='./upload',$maxSize=2097152){
+function getFilesInfo($fileInfo,$flag=true,$path='./upload',$allowExt=['jpg','jpeg','gif','png'],$maxSize=2097152){
 	$res=[];
-	if($fileInfo['error']===UPLOAD_ERR_OK){
+		if($fileInfo['error']===UPLOAD_ERR_OK){
 		if($fileInfo['size']>$maxSize){
 			$res['msg']=$fileInfo['name'].'文件过大';
 		}
+		//如果有错误 直接返回错误信息，不运行以下代码
+		//每个过滤条件都要加上这句，否则如果一个上传的文件
+		//同时符合过滤条件，后面的那句会覆盖之前的
+		if($res) return $res;
 		$ext=getExt($fileInfo['name']);
+		
 		if(!in_array($ext, $allowExt)){
 			$res['msg']=$fileInfo['name'].'非法文件类型';
 		}
-		if($flag){
-			if(!getimagesize($fileInfo['tmp_name'])){
-				$res['msg']=$fileInfo['name'].'不是真实图片类型';
-			}
+		if($res) return $res;
+		if(!getimagesize($fileInfo['tmp_name'])){
+			$res['msg']=$fileInfo['name'].'不是真实的图片';
 		}
+		if($res) return $res;
 		if(!is_uploaded_file($fileInfo['tmp_name'])){
 			$res['msg']=$fileInfo['name'].'不是通过HTTP post方法上传';
 		}
-		//如果有错误 直接返回错误信息，不运行以下代码
 		if($res) return $res;
 		$uniqueName=getUniqueName();
 		if(!file_exists($path)){
