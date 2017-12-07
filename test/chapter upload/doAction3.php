@@ -9,7 +9,7 @@ foreach ($filesArr as $fileInfo) {
 	$res=getFilesInfo($fileInfo);
 	//输出文件上传成功或者报错信息
 	echo $res['msg'].'<br/>';
-	//赋值文件路径给新数组，为之后输入数据库做准备。
+	//赋值文件路给新数组，为之后输入数据库做准备。
 	$getFilesInfo[]=$res['dest'];		
 	}
 //上传失败的文件没有路径（$res['dest'}），会造成空值。
