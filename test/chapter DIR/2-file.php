@@ -1,4 +1,5 @@
 <?php
+header('content-type:text/html;charset=utf-8');
 // var_dump(touch('./test3.txt'));
 //同级目录下新建文件
 // var_dump(touch('d:/test3.txt'));
@@ -53,5 +54,9 @@ if(file_exists($filename)){
 
 
 
-$source='http://php.net/manual/zh/function.copy.php';
-$
+//拷贝路径
+var_dump(copy('./test1.txt','./test3.txt'));
+//拷贝文件test1到同级目录，命名为test3.txt
+
+var_dump(copy('http://img.taopic.com/uploads/allimg/120727/201995-120HG1030762.jpg','./1.jpeg'));
+//拷贝url到同级目录，命名为1.jpeg
