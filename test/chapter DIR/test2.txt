@@ -1,6 +1,0 @@
-abcde
-fghijk
-<h1>this is a title</h1>
-<h2>this is a title</h2>
-<h3>this is a title</h3>
-<a href="www.baidu.com">百度</a>
