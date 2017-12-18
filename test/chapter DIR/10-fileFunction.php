@@ -92,7 +92,7 @@ function copy_file(string $filename,string $path){
 
 
 /**
- * 重命名文件
+ * [rename_file 重命名文件]
  * @param  string $filename 要被重命名的文件
  * @param  string $rename   重命名的名称
  * @return [type]            bool
@@ -117,7 +117,7 @@ function rename_file($filename,$newFileName){
 
 
 /**
- *剪切文件 
+ *[cut_file剪切文件]
  * @param  string $filename 要剪切的文件
  * @param  string $source   剪切的路径
  * @return  bool
@@ -145,7 +145,7 @@ function cut_file(string $filename,string $path){
 
 
 /**
- * 返回文件信息
+ * [get_file_info返回文件信息]
  * @param  string $filename 文件名
  * @return mixed     文件信息相关数据|false
  */
@@ -166,7 +166,7 @@ function get_file_info(string $filename){
 
 
 /**
- * 转换字节单位
+ * [trans_byte转换字节单位]
  * @param  int         $byte     字节
  * @param  int|integer $precision 默认精度，保留小数点后两位
  * @return string         转换之后的字符串
@@ -195,7 +195,7 @@ function trans_byte(int $byte,int $precision=2){
 
 
 /**
- *读取文件信息 
+ *[read_file读取文件内容]
  * @param  string $filename 文件名
  * @return mixed           读取文件内容|false
  */
@@ -209,7 +209,7 @@ function read_file(string $filename){
 
 
 /**
- * 读取文件中的内容到数组中
+ * [read_file_array读取文件中的内容到数组中]
  * @param  string       $filename  文件名
  * @param  bool|boolean $skip_empty_lines  是否过滤空行
  * @return [type]       包含文件内容的数组|false
@@ -231,7 +231,7 @@ function read_file_array(string $filename,bool $skip_empty_lines=false){
 
 
 /**
- *对文件写入内容,追加内容不清空文件。
+ *[put_files对文件写入内容,追加内容不清空文件。]
  * @param  string $filename 文件名
  * @param  mixed $data     数据。数组和对象需要处理
  * @return bool             true|false
@@ -241,7 +241,7 @@ function put_files(stirng $filename, $data){
 	if(!file_exists($path)){
 		mkdir($path,0777,true);
 	}
-	if(is_file($filename)&&is_readable($filename)){
+	if(is_file($filename)&&is_writeable($filename)){
 		if(filesize($filename)>0){
 			$srcData=file_get_contents($filename);
 		}
@@ -258,8 +258,11 @@ function put_files(stirng $filename, $data){
 }
 // put_files('test1.txt','123');	
 
+
+
+
 /**
- * 截取文件内容
+ * [truncate_file截取文件内容]
  * @param  string $filename 文件名
  * @param  int $len      需要截取的文件长度
  * @return  bool
@@ -268,7 +271,7 @@ function truncate_file($filename,$len){
 	if(is_file($filename)||is_writable($filename)){
 		$len<0?0:$len;
 		$handle=fopen($filename, 'rb+');
-		$data=ftruncate($handle, $len);
+		ftruncate($handle, $len);
 		fclose($handle);
 		return true;		
 	}

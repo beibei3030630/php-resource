@@ -151,10 +151,50 @@ function getFileContent($filename){
 	}
 	return file_get_contents($filename);
 }
-var_dump(getFileContent('user.txt'));
+// var_dump(getFileContent('user.txt'));
 
 //读取文件中的内容到数组中
+ function getFileArray($filename,$flag=false){
+ 	if(!is_file($filename)||!is_readable($filename)){
+ 		return false;
+ 	}
+ 	if($flag){
+ 		return file($filename,FILE_IGNORE_NEW_LINES|FILE_SKIP_EMPTY_LINES);
+ 	}else{
+ 		return file($filename);
+ 	}
+ }
+
+// print_r(getFileArray('./user.txt',true));
 
 //对文件写入内容,追加内容不清空文件。
+function putFile($filename,$nData){
+	if(is_file($filename)||is_writable($filename)){
+		if(filesize($filename)>0){
+			$srcData=file_get_contents($filename);
+		}
+	}
+	if((is_array($nData)||is_object($nData))){
+		$nData=serialize($nData);
+	}
+	$nData=$srcData.$nData;
+
+	if(file_put_contents($filename,$nData)!==false){
+		return true;
+	}
+	return false;
+}
+putFile('./user.txt','5-alice-18');
 
 //截取文件内容
+function cut_file_content($filename,$num){
+	if(is_file($filename)||is_readable($filename)){
+		$num<0?0:$num;
+		$handle=fopen($filename, 'rb+');
+		ftruncate($handle, $num);
+		fclose($handle);	
+		return true;	
+	}
+	return false;
+}
+cut_file_content('user.txt',2);
