@@ -28,7 +28,7 @@ function getFile($fileInfo,$maxSize=2097152,$allowExt=['jpg','jpeg','png','gif']
 			chmod($path, 0777);
 		}
 		$unique=md5(uniqid(microtime(true),true));
-		$dest=$path.$unique.'.'.$ext;
+		$dest=$path.DIRECTORY_SEPARATOR.$unique.'.'.$ext;
 		if(!is_uploaded_file($fileInfo['tmp_name'])){
 			exit('不是通过HTTP POST方式上传');
 		}
