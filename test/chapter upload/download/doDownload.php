@@ -42,7 +42,7 @@ function downloadFile1( $filename,array $allowExtArray=['jpg','jpeg','png','gif'
 	//告诉浏览器输出的是字节流
 	header('content-type:application/octet-stream');
 	//告诉浏览器返回的文件大小
-	header('Accept-length:'.$filesize);
+	header('Accept-Length:'.$filesize);
 	//告诉浏览器返回的文件大小是按照字节进行计算的
 	header('Accept-Ranges:bytes');
 	//告诉浏览器作为附件处理，告诉浏览器最终下载完的文件名称(这句是重点)
