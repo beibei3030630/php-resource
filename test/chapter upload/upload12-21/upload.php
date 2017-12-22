@@ -6,7 +6,13 @@
 </head>
 <body>
 	<form action="doAction.php" method='post' enctype="multipart/form-data">
-		<input type="file" name='myFile'/>
+		<input type="file" name='myFile[]'/>
+		<br/>
+		<input type="file" name='myFile[]'/>
+		<br/>
+		<input type="file" name='myFile[]'/>
+		<br/>
+		<input type="file" name='myFile[]'/>
 		<br/>
 		<input type="submit" value='提交文件'/>
 	</form>

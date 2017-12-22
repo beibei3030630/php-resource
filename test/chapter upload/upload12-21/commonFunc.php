@@ -4,17 +4,17 @@ function getFileInfo( $file, int $maxSize=2097152, array $allowExt=['jpg','jpeg'
 	$res='';
 	if($file['error']==0){
 		if($maxSize<$file['size']){
-			$res='文件过大';
+			exit($res='文件过大');
 		}
 		$ext=strtolower(PATHINFO($file['name'],PATHINFO_EXTENSION));
 		if(!in_array($ext, $allowExt)){
-			$res= '文件类型错误';
+			exit($res='文件类型错误');
 		}
-		if(!getimagesize($file['tmp_name'])){
-			$res= '不是真实的图片类型';
+		if(!@getimagesize($file['tmp_name'])){
+			exit($res='不是真实的图片类型');
 		}
 		if(!is_uploaded_file($file['tmp_name'])){
-			$res= '不是通过HTTP上传的文件';
+			exit($res='不是通过HTTP上传的文件');
 		}
 		$unique=md5(uniqid(microtime(true),true));
 		if(!is_dir($path)){
@@ -47,4 +47,8 @@ function getFileInfo( $file, int $maxSize=2097152, array $allowExt=['jpg','jpeg'
 	}
   }
   return $res;
+}
+
+function getFilesInfo(){
+	
 }
