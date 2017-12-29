@@ -5,7 +5,7 @@
 	<title>multifileUpload</title>
 </head>
 <body>
-	<form action="doAction4.php" method='post'>
+	<form action="doAction3.php" method='post'>
 		<input type="file" name='myFile[]'/>
 		<input type="file" name='myFile[]'/>
 		<input type="file" name='myFile[]'/>
