@@ -1,0 +1,65 @@
+2017-10-16T02:19:11.290658Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+2017-12-27T02:57:05.921232Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+2017-12-27T02:57:05.921232Z 0 [Warning] Insecure configuration for --secure-file-priv: Current value does not restrict location of generated files. Consider setting it to a valid, non-empty path.
+2017-12-27T02:57:05.922232Z 0 [Note] D:\wamp\wamp\bin\mysql\mysql5.7.14\bin\mysqld.exe (mysqld 5.7.14) starting as process 4960 ...
+2017-12-27T02:57:24.857110Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+2017-12-27T02:57:24.857110Z 0 [Warning] Insecure configuration for --secure-file-priv: Current value does not restrict location of generated files. Consider setting it to a valid, non-empty path.
+2017-12-27T02:57:24.857110Z 0 [Note] D:\wamp\wamp\bin\mysql\mysql5.7.14\bin\mysqld.exe (mysqld 5.7.14) starting as process 5100 ...
+2017-12-27T02:57:26.030941Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+2017-12-27T02:57:26.030941Z 0 [Warning] Insecure configuration for --secure-file-priv: Current value does not restrict location of generated files. Consider setting it to a valid, non-empty path.
+2017-12-27T02:57:26.031940Z 0 [Note] D:\wamp\wamp\bin\mysql\mysql5.7.14\bin\mysqld.exe (mysqld 5.7.14) starting as process 15452 ...
+2017-12-27T02:57:26.824521Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+2017-12-27T02:57:26.824521Z 0 [Warning] Insecure configuration for --secure-file-priv: Current value does not restrict location of generated files. Consider setting it to a valid, non-empty path.
+2017-12-27T02:57:26.824521Z 0 [Note] D:\wamp\wamp\bin\mysql\mysql5.7.14\bin\mysqld.exe (mysqld 5.7.14) starting as process 1052 ...
+2017-12-27T02:57:33.782924Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+2017-12-27T02:57:33.782924Z 0 [Warning] Insecure configuration for --secure-file-priv: Current value does not restrict location of generated files. Consider setting it to a valid, non-empty path.
+2017-12-27T02:57:33.783926Z 0 [Note] D:\wamp\wamp\bin\mysql\mysql5.7.14\bin\mysqld.exe (mysqld 5.7.14) starting as process 6760 ...
+2017-12-27T03:00:11.853569Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+2017-12-27T03:00:11.853569Z 0 [Warning] Insecure configuration for --secure-file-priv: Current value does not restrict location of generated files. Consider setting it to a valid, non-empty path.
+2017-12-27T03:00:11.854558Z 0 [Note] mysqld (mysqld 5.7.14) starting as process 5456 ...
+2017-12-27T03:00:11.862564Z 0 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2017-12-27T03:00:11.862564Z 0 [Note] InnoDB: Uses event mutexes
+2017-12-27T03:00:11.863564Z 0 [Note] InnoDB: Memory barrier is not used
+2017-12-27T03:00:11.863564Z 0 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2017-12-27T03:00:11.864565Z 0 [Note] InnoDB: Number of pools: 1
+2017-12-27T03:00:11.864565Z 0 [Note] InnoDB: Not using CPU crc32 instructions
+2017-12-27T03:00:11.867566Z 0 [Note] InnoDB: Initializing buffer pool, total size = 128M, instances = 1, chunk size = 128M
+2017-12-27T03:00:11.875572Z 0 [Note] InnoDB: Completed initialization of buffer pool
+2017-12-27T03:00:11.897588Z 0 [ERROR] InnoDB: The innodb_system data file 'ibdata1' must be writable
+2017-12-27T03:00:11.897588Z 0 [ERROR] InnoDB: The innodb_system data file 'ibdata1' must be writable
+2017-12-27T03:00:11.898589Z 0 [ERROR] InnoDB: Plugin initialization aborted with error Generic error
+2017-12-27T03:00:12.100751Z 0 [ERROR] Plugin 'InnoDB' init function returned error.
+2017-12-27T03:00:12.100751Z 0 [ERROR] Plugin 'InnoDB' registration as a STORAGE ENGINE failed.
+2017-12-27T03:00:12.100751Z 0 [ERROR] Failed to initialize plugins.
+2017-12-27T03:00:12.101745Z 0 [ERROR] Aborting
+
+2017-12-27T03:00:12.101745Z 0 [Note] Binlog end
+2017-12-27T03:00:12.101745Z 0 [Note] Shutting down plugin 'CSV'
+2017-12-27T03:00:12.102745Z 0 [Note] mysqld: Shutdown complete
+
+2017-12-27T03:11:01.025610Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+2017-12-27T03:11:01.025610Z 0 [Warning] Insecure configuration for --secure-file-priv: Current value does not restrict location of generated files. Consider setting it to a valid, non-empty path.
+2017-12-27T03:11:01.025610Z 0 [Note] mysqld (mysqld 5.7.14) starting as process 13396 ...
+2017-12-27T03:11:01.033632Z 0 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2017-12-27T03:11:01.034628Z 0 [Note] InnoDB: Uses event mutexes
+2017-12-27T03:11:01.034628Z 0 [Note] InnoDB: Memory barrier is not used
+2017-12-27T03:11:01.034628Z 0 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2017-12-27T03:11:01.035629Z 0 [Note] InnoDB: Number of pools: 1
+2017-12-27T03:11:01.035629Z 0 [Note] InnoDB: Not using CPU crc32 instructions
+2017-12-27T03:11:01.038619Z 0 [Note] InnoDB: Initializing buffer pool, total size = 128M, instances = 1, chunk size = 128M
+2017-12-27T03:11:01.046637Z 0 [Note] InnoDB: Completed initialization of buffer pool
+2017-12-27T03:11:01.080649Z 0 [ERROR] InnoDB: The innodb_system data file 'ibdata1' must be writable
+2017-12-27T03:11:01.080649Z 0 [ERROR] InnoDB: The innodb_system data file 'ibdata1' must be writable
+2017-12-27T03:11:01.081661Z 0 [ERROR] InnoDB: Plugin initialization aborted with error Generic error
+2017-12-27T03:11:01.284843Z 0 [ERROR] Plugin 'InnoDB' init function returned error.
+2017-12-27T03:11:01.285843Z 0 [ERROR] Plugin 'InnoDB' registration as a STORAGE ENGINE failed.
+2017-12-27T03:11:01.286846Z 0 [ERROR] Failed to initialize plugins.
+2017-12-27T03:11:01.287845Z 0 [ERROR] Aborting
+
+2017-12-27T03:11:01.287845Z 0 [Note] Binlog end
+2017-12-27T03:11:01.288847Z 0 [Note] Shutting down plugin 'CSV'
+2017-12-27T03:11:01.290847Z 0 [Note] mysqld: Shutdown complete
+
+2018-01-11T06:03:32.690959Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+2018-01-11T06:03:32.690959Z 0 [Warning] Insecure configuration for --secure-file-priv: Current value does not restrict location of generated files. Consider setting it to a valid, non-empty path.
+2018-01-11T06:03:32.690959Z 0 [Note] D:\wamp\wamp\bin\mysql\mysql5.7.14\bin\mysqld.exe (mysqld 5.7.14) starting as process 10768 ...
