@@ -198,14 +198,14 @@
 -- 分别在tdb_goods_cates和tdb_goods_brands表插入记录
 
    INSERT tdb_goods_cates(cate_name) VALUES('路由器'),('交换机'),('网卡');
-
+ 
    INSERT tdb_goods_brands(brand_name) VALUES('海尔'),('清华同方'),('神舟');
 
 -- 在tdb_goods数据表写入任意记录
 
    INSERT tdb_goods(goods_name,cate_id,brand_id,goods_price) VALUES(' LaserJet Pro P1606dn 黑白激光打印机','12','4','1849');
 
--- 查询所有商品的详细信息(通过内连接实现)
+-- 查询所有商品的详细信息(通过内连接实现
 
    SELECT goods_id,goods_name,cate_name,brand_name,goods_price FROM tdb_goods AS g
 
